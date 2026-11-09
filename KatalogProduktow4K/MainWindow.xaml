@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KatalogProduktow4K"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="400">
+        Title="MainWindow" Height="600" Width="800">
     <Grid Margin="20,20,20,20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -63,5 +64,12 @@
         </DataGrid>
 
         <Button x:Name="UsunProduktButton" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Content="Usuń produkt" Click="UsunProdukt" />
+        <StackPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="10" Margin="20,0,0,0"
+                    DataContext="{Binding SelectedItem, ElementName=ListaProduktow}">
+            <TextBlock Text="{Binding Nazwa}" FontSize="18" />
+            <TextBlock Text="{Binding Ilosc, StringFormat=Na stanie {0} szt.}" />
+            <TextBlock Text="{Binding Cena, StringFormat=Cena: {0:F2} zł}" />
+            <!-- TODO: dodaj wartość magazynu - będziesz potrzebować publicznej właściwości w klasie Produkt -->
+        </StackPanel>
     </Grid>
 </Window>
