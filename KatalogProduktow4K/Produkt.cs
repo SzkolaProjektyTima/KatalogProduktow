@@ -13,5 +13,9 @@ namespace KatalogProduktow4K
 
         public int Ilosc { get; set; }
         public string Kategoria { get; set; } = "";
+        public double WartoscMagazynu
+        {
+            get { return Cena * Ilosc; }
+        }
     }
 }
