@@ -24,7 +24,6 @@ namespace KatalogProduktow4K
             Produkty.Add(new Produkt { Nazwa = "Laptop", Cena = 3500, Ilosc = 5, Kategoria = "Elektronika" });
             Produkty.Add(new Produkt { Nazwa = "Koszula", Cena = 120, Ilosc = 10, Kategoria = "Odzież" });
 
-            // Binding DataGrid.ItemsSource -> Produkty.
             DataContext = this;
         }
 
@@ -55,7 +54,7 @@ namespace KatalogProduktow4K
 
             if (PromocjaCheckBox.IsChecked == true)
             {
-                wartoscZamowienia *= 0.9;   // promocja -10%
+                wartoscZamowienia *= 0.9;
             }
 
             WynikTextBlock.Text = $"{NazwaTextBox.Text} ({kategoria}): {wartoscZamowienia:F2} zł";
